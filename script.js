@@ -19,8 +19,6 @@ const isPalindrome = function (x) {
     sum = sum * 10 + rem;
     x = Math.floor(x / 10);
   }
-  console.log(copyNumber, x);
-  
   return sum === copyNumber ? true : false;
 };
 console.log(isPalindrome(121));
