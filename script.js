@@ -23,9 +23,24 @@
 // };
 // console.log(isPalindrome(121));
 
-// 9. Palindrome Number
-const isPalindrome = function (x) {
-  const reverseNumber = Number(x.toString().split("").reverse().join(""));
-  return x === reverseNumber ? true : false;
+// // 9. Palindrome Number
+// const isPalindrome = function (x) {
+//   const reverseNumber = Number(x.toString().split("").reverse().join(""));
+//   return x === reverseNumber ? true : false;
+// };
+// console.log(isPalindrome(121));
+
+// 26. Remove Duplicates from Sorted Array
+const removeDuplicates = function (nums) {
+    if(nums.length === 0) return 0;
+
+    let unique = 0;
+    for(let i = 1; i<nums.length; i++){
+        if(nums[unique] !== nums[i]){
+            unique++;
+            nums[unique] = nums[i];
+        }
+    }
+    return unique + 1;
 };
-console.log(isPalindrome(123));
+console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
