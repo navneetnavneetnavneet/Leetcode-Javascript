@@ -57,13 +57,40 @@
 // };
 // console.log(removeElement([3, 2, 2, 3], 3));
 
-// 492. Construct the Rectangle
-const constructRectangle = function (area) {
-  let width = Math.floor(Math.sqrt(area));
-  while (area % width !== 0) {
-    width--;
-  }
-  let length = area / width;
-  return [length, width];
-};
-console.log(constructRectangle(37));
+// // 492. Construct the Rectangle
+// const constructRectangle = function (area) {
+//   let width = Math.floor(Math.sqrt(area));
+//   while (area % width !== 0) {
+//     width--;
+//   }
+//   let length = area / width;
+//   return [length, width];
+// };
+// console.log(constructRectangle(37));
+
+
+// 697. Degree of an Array
+function findShortestSubArray(nums) {
+    let frequency = {};
+    let firstIndex = {};
+    let lastIndex = {};
+
+    for(let i=0; i<nums.length; i++){
+        let num = nums[i];
+        if(firstIndex[num] === undefined){
+            firstIndex[num] = i;
+        }
+        lastIndex[num] = i;
+        frequency[num] = (frequency[num] || 0) + 1;
+    }
+    let degree = Math.max(...Object.values(frequency));
+    let minLength = nums.length;
+    for(let num in frequency){
+        if(frequency[num] === degree){
+            let length = lastIndex[num] - firstIndex[num] + 1;
+            minLength = Math.min(minLength, length); 
+        } 
+    }
+    return minLength;
+}
+console.log(findShortestSubArray([1, 2, 2, 3, 1]));
