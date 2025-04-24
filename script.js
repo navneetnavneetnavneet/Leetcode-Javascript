@@ -44,15 +44,26 @@
 // };
 // console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
 
-// 27. Remove Element
-const removeElement = function (nums, val) {
-  let k = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== val) {
-      nums[k] = nums[i];
-      k++;
-    }
+// // 27. Remove Element
+// const removeElement = function (nums, val) {
+//   let k = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== val) {
+//       nums[k] = nums[i];
+//       k++;
+//     }
+//   }
+//   return k;
+// };
+// console.log(removeElement([3, 2, 2, 3], 3));
+
+// 492. Construct the Rectangle
+const constructRectangle = function (area) {
+  let width = Math.floor(Math.sqrt(area));
+  while (area % width !== 0) {
+    width--;
   }
-  return k;
+  let length = area / width;
+  return [length, width];
 };
-console.log(removeElement([3, 2, 2, 3], 3));
+console.log(constructRectangle(37));
