@@ -10,18 +10,18 @@
 // };
 // console.log(twoSum([2, 7, 11, 15], 9));
 
-// 1. Two Sum  (Efficient way)
-const twoSum = function (nums, target) {
-  const map = new Map();
-  for (let i = 0; i < nums.length; i++) {
-    if (map.has(target - nums[i])) {
-      return [i, map.get(target - nums[i])];
-    } else {
-      map.set(nums[i], i);
-    }
-  }
-};
-console.log(twoSum([2, 7, 11, 15], 9));
+// // 1. Two Sum  (Efficient way)
+// const twoSum = function (nums, target) {
+//   const map = new Map();
+//   for (let i = 0; i < nums.length; i++) {
+//     if (map.has(target - nums[i])) {
+//       return [i, map.get(target - nums[i])];
+//     } else {
+//       map.set(nums[i], i);
+//     }
+//   }
+// };
+// console.log(twoSum([2, 7, 11, 15], 9));
 
 // // 9. Palindrome Number
 // const isPalindrome = function (x) {
@@ -82,7 +82,7 @@ console.log(twoSum([2, 7, 11, 15], 9));
 // console.log(constructRectangle(37));
 
 // // 697. Degree of an Array
-// function findShortestSubArray(nums) {
+// const findShortestSubArray = function(nums) {
 //     let frequency = {};
 //     let firstIndex = {};
 //     let lastIndex = {};
@@ -105,3 +105,20 @@ console.log(twoSum([2, 7, 11, 15], 9));
 //     return minLength;
 // }
 // console.log(findShortestSubArray([1, 2, 2, 3, 1]));
+
+// 2351. First Letter to Appear Twice
+const repeatedCharacter = function(s){
+    const map = new Map();
+    for(let i = 0; i<s.length; i++){
+        const character = s.charAt(i);
+        if(map.has(character)){
+            map.set(character, map.get(character) + 1);
+            if(map.get(character) === 2){
+                return character;
+            }
+        }else{
+            map.set(character, 1);
+        }
+    }
+}
+console.log(repeatedCharacter("abccbaacz"));
