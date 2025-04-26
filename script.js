@@ -10,6 +10,19 @@
 // };
 // console.log(twoSum([2, 7, 11, 15], 9));
 
+// 1. Two Sum  (Efficient way)
+const twoSum = function (nums, target) {
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    if (map.has(target - nums[i])) {
+      return [i, map.get(target - nums[i])];
+    } else {
+      map.set(nums[i], i);
+    }
+  }
+};
+console.log(twoSum([2, 7, 11, 15], 9));
+
 // // 9. Palindrome Number
 // const isPalindrome = function (x) {
 //   let copyNumber = x;
@@ -68,29 +81,27 @@
 // };
 // console.log(constructRectangle(37));
 
-
-// 697. Degree of an Array
-function findShortestSubArray(nums) {
-    let frequency = {};
-    let firstIndex = {};
-    let lastIndex = {};
-
-    for(let i=0; i<nums.length; i++){
-        let num = nums[i];
-        if(firstIndex[num] === undefined){
-            firstIndex[num] = i;
-        }
-        lastIndex[num] = i;
-        frequency[num] = (frequency[num] || 0) + 1;
-    }
-    let degree = Math.max(...Object.values(frequency));
-    let minLength = nums.length;
-    for(let num in frequency){
-        if(frequency[num] === degree){
-            let length = lastIndex[num] - firstIndex[num] + 1;
-            minLength = Math.min(minLength, length); 
-        } 
-    }
-    return minLength;
-}
-console.log(findShortestSubArray([1, 2, 2, 3, 1]));
+// // 697. Degree of an Array
+// function findShortestSubArray(nums) {
+//     let frequency = {};
+//     let firstIndex = {};
+//     let lastIndex = {};
+//     for(let i=0; i<nums.length; i++){
+//         let num = nums[i];
+//         if(firstIndex[num] === undefined){
+//             firstIndex[num] = i;
+//         }
+//         lastIndex[num] = i;
+//         frequency[num] = (frequency[num] || 0) + 1;
+//     }
+//     let degree = Math.max(...Object.values(frequency));
+//     let minLength = nums.length;
+//     for(let num in frequency){
+//         if(frequency[num] === degree){
+//             let length = lastIndex[num] - firstIndex[num] + 1;
+//             minLength = Math.min(minLength, length);
+//         }
+//     }
+//     return minLength;
+// }
+// console.log(findShortestSubArray([1, 2, 2, 3, 1]));
