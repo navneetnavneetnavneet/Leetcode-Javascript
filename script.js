@@ -137,16 +137,35 @@
 // }
 // console.log(repeatedCharacter("abcbaacz"));
 
-// 2351. First Letter to Appear Twice
-const repeatedCharacter = function (s) {
-  const set = new Set();
-  for (let i = 0; i < s.length; i++) {
-    const character = s.charAt(i);
-    if (set.has(character)) {
-      return character;
-    } else {
-      set.add(character);
-    }
+// // 2351. First Letter to Appear Twice
+// const repeatedCharacter = function (s) {
+//   const set = new Set();
+//   for (let i = 0; i < s.length; i++) {
+//     const character = s.charAt(i);
+//     if (set.has(character)) {
+//       return character;
+//     } else {
+//       set.add(character);
+//     }
+//   }
+// };
+// console.log(repeatedCharacter("abcbaacz"));
+
+// 2418. Sort the People
+const sortPeople = function (names, heights) {
+  const map = new Map();
+  const peoples = new Array(heights.length);
+
+  for (let i = 0; i < heights.length; i++) {
+    map.set(heights[i], names[i]);
   }
+
+  heights.sort((a, b) => b - a);
+
+  for (let i = 0; i < heights.length; i++) {
+    peoples[i] = map.get(heights[i]);
+  }
+  
+  return peoples;
 };
-console.log(repeatedCharacter("abcbaacz"));
+console.log(sortPeople(["Mary", "John", "Emma"], [180, 165, 170]));
