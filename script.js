@@ -106,19 +106,47 @@
 // }
 // console.log(findShortestSubArray([1, 2, 2, 3, 1]));
 
+// // 2351. First Letter to Appear Twice
+// const repeatedCharacter = function(s){
+//     const map = new Map();
+//     for(let i = 0; i<s.length; i++){
+//         const character = s.charAt(i);
+//         if(map.has(character)){
+//             map.set(character, map.get(character) + 1);
+//             if(map.get(character) === 2){
+//                 return character;
+//             }
+//         }else{
+//             map.set(character, 1);
+//         }
+//     }
+// }
+// console.log(repeatedCharacter("abccbaacz"));
+
+// // 2351. First Letter to Appear Twice
+// const repeatedCharacter = function(s){
+//     const map = new Map();
+//     for(let i=0; i<s.length; i++){
+//         const character = s.charAt(i);
+//         if(map.has(character)){
+//             return character;
+//         }else{
+//             map.set(character, 1);
+//         }
+//     }
+// }
+// console.log(repeatedCharacter("abcbaacz"));
+
 // 2351. First Letter to Appear Twice
-const repeatedCharacter = function(s){
-    const map = new Map();
-    for(let i = 0; i<s.length; i++){
-        const character = s.charAt(i);
-        if(map.has(character)){
-            map.set(character, map.get(character) + 1);
-            if(map.get(character) === 2){
-                return character;
-            }
-        }else{
-            map.set(character, 1);
-        }
+const repeatedCharacter = function (s) {
+  const set = new Set();
+  for (let i = 0; i < s.length; i++) {
+    const character = s.charAt(i);
+    if (set.has(character)) {
+      return character;
+    } else {
+      set.add(character);
     }
-}
-console.log(repeatedCharacter("abccbaacz"));
+  }
+};
+console.log(repeatedCharacter("abcbaacz"));
