@@ -151,21 +151,45 @@
 // };
 // console.log(repeatedCharacter("abcbaacz"));
 
-// 2418. Sort the People
-const sortPeople = function (names, heights) {
-  const map = new Map();
-  const peoples = new Array(heights.length);
+// // 2418. Sort the People
+// const sortPeople = function (names, heights) {
+//   const map = new Map();
+//   const peoples = new Array(heights.length);
 
-  for (let i = 0; i < heights.length; i++) {
-    map.set(heights[i], names[i]);
+//   for (let i = 0; i < heights.length; i++) {
+//     map.set(heights[i], names[i]);
+//   }
+
+//   heights.sort((a, b) => b - a);
+
+//   for (let i = 0; i < heights.length; i++) {
+//     peoples[i] = map.get(heights[i]);
+//   }
+
+//   return peoples;
+// };
+// console.log(sortPeople(["Mary", "John", "Emma"], [180, 165, 170]));
+
+// 867. Transpose Matrix
+const transpose = function (matrix) {
+  const ans = new Array(matrix[0].length);
+
+  for (let i = 0; i < ans.length; i++) {
+    ans[i] = new Array(matrix.length);
   }
 
-  heights.sort((a, b) => b - a);
-
-  for (let i = 0; i < heights.length; i++) {
-    peoples[i] = map.get(heights[i]);
+  for (let i = 0; i < ans.length; i++) {
+    for (let j = 0; j < ans[i].length; j++) {
+      ans[i][j] = matrix[j][i];
+    }
   }
-  
-  return peoples;
+
+  return ans;
 };
-console.log(sortPeople(["Mary", "John", "Emma"], [180, 165, 170]));
+console.log(
+  transpose([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ])
+);
