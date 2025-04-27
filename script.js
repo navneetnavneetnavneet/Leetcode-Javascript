@@ -170,24 +170,56 @@
 // };
 // console.log(sortPeople(["Mary", "John", "Emma"], [180, 165, 170]));
 
-// 867. Transpose Matrix
-const transpose = function (matrix) {
-  const ans = new Array(matrix[0].length);
+// // 867. Transpose Matrix
+// const transpose = function (matrix) {
+//   const ans = new Array(matrix[0].length);
 
-  for (let i = 0; i < ans.length; i++) {
-    ans[i] = new Array(matrix.length);
-  }
+//   for (let i = 0; i < ans.length; i++) {
+//     ans[i] = new Array(matrix.length);
+//   }
 
-  for (let i = 0; i < ans.length; i++) {
-    for (let j = 0; j < ans[i].length; j++) {
-      ans[i][j] = matrix[j][i];
+//   for (let i = 0; i < ans.length; i++) {
+//     for (let j = 0; j < ans[i].length; j++) {
+//       ans[i][j] = matrix[j][i];
+//     }
+//   }
+
+//   return ans;
+// };
+// console.log(
+//   transpose([
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9],
+//   ])
+// );
+
+// 48. Rotate Image
+const rotate = function (matrix) {
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = i; j < matrix[i].length; j++) {
+      let temp = matrix[i][j];
+      matrix[i][j] = matrix[j][i];
+      matrix[j][i] = temp;
     }
   }
 
-  return ans;
+  for (let i = 0; i < matrix.length; i++) {
+    let j = 0;
+    let k = matrix[i].length - 1;
+    while (j < k) {
+      let temp = matrix[i][j];
+      matrix[i][j] = matrix[i][k];
+      matrix[i][k] = temp;
+      j++;
+      k--;
+    }
+  }
+
+  return matrix;
 };
 console.log(
-  transpose([
+  rotate([
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
