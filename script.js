@@ -241,21 +241,43 @@
 // }
 // console.log(isPalindrome("A man, a plan, a canal: Panama"));
 
-// 125. Valid Palindrome
-const isPalindrome = function (s) {
-  const str = s.toLowerCase().replace(/[^a-z0-9]/g, "");
-  let i = 0;
-  let j = str.length - 1;
+// // 125. Valid Palindrome
+// const isPalindrome = function (s) {
+//   const str = s.trim().toLowerCase().replace(/[^a-z0-9]/g, "");
+//   let i = 0;
+//   let j = str.length - 1;
 
-  while (i < j) {
-    if (str.charAt(i) === str.charAt(j)) {
-      i++;
-      j--;
-    } else {
-      return false;
+//   while (i < j) {
+//     if (str.charAt(i) === str.charAt(j)) {
+//       i++;
+//       j--;
+//     } else {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// };
+// console.log(isPalindrome("A man, a plan, a canal: Panama"));
+
+// 202. Happy Number
+const isHappy = function (n) {
+  let arr = new Array();
+  while (n !== 1) {
+    let sum = 0;
+    while (n > 0) {
+      let rem = n % 10;
+      sum = sum + rem * rem;
+      n = Math.floor(n / 10);
     }
+
+    if (sum === 1) return true;
+    if (arr.includes(sum)) return false;
+    else arr.push(sum);
+
+    n = sum;
   }
 
   return true;
 };
-console.log(isPalindrome("A man, a plan, a canal: Panama"));
+console.log(isHappy(19));
