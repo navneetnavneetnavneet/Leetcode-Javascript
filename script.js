@@ -194,34 +194,41 @@
 //   ])
 // );
 
-// 48. Rotate Image
-const rotate = function (matrix) {
-  for (let i = 0; i < matrix.length; i++) {
-    for (let j = i; j < matrix[i].length; j++) {
-      let temp = matrix[i][j];
-      matrix[i][j] = matrix[j][i];
-      matrix[j][i] = temp;
-    }
-  }
+// // 48. Rotate Image
+// const rotate = function (matrix) {
+//   for (let i = 0; i < matrix.length; i++) {
+//     for (let j = i; j < matrix[i].length; j++) {
+//       let temp = matrix[i][j];
+//       matrix[i][j] = matrix[j][i];
+//       matrix[j][i] = temp;
+//     }
+//   }
 
-  for (let i = 0; i < matrix.length; i++) {
-    let j = 0;
-    let k = matrix[i].length - 1;
-    while (j < k) {
-      let temp = matrix[i][j];
-      matrix[i][j] = matrix[i][k];
-      matrix[i][k] = temp;
-      j++;
-      k--;
-    }
-  }
+//   for (let i = 0; i < matrix.length; i++) {
+//     let j = 0;
+//     let k = matrix[i].length - 1;
+//     while (j < k) {
+//       let temp = matrix[i][j];
+//       matrix[i][j] = matrix[i][k];
+//       matrix[i][k] = temp;
+//       j++;
+//       k--;
+//     }
+//   }
 
-  return matrix;
+//   return matrix;
+// };
+// console.log(
+//   rotate([
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9],
+//   ])
+// );
+
+// 58. Length of Last Word
+const lengthOfLastWord = function (s) {
+  let strArray = s.trim().split(" ");
+  return strArray[strArray.length - 1].length;
 };
-console.log(
-  rotate([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-  ])
-);
+console.log(lengthOfLastWord("Hello World"));
