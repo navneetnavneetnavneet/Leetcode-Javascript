@@ -226,9 +226,17 @@
 //   ])
 // );
 
-// 58. Length of Last Word
-const lengthOfLastWord = function (s) {
-  let strArray = s.trim().split(" ");
-  return strArray[strArray.length - 1].length;
-};
-console.log(lengthOfLastWord("Hello World"));
+// // 58. Length of Last Word
+// const lengthOfLastWord = function (s) {
+//   let strArray = s.trim().split(" ");
+//   return strArray[strArray.length - 1].length;
+// };
+// console.log(lengthOfLastWord("Hello World"));
+
+// 125. Valid Palindrome
+const isPalindrome = function(s){
+  const str = s.trim().toLowerCase().replace(/[^a-z0-9]/g, "");
+  const reverseString = str.split("").reverse().join("");
+  return str === reverseString ? true : false;
+}
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
