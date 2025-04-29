@@ -233,10 +233,29 @@
 // };
 // console.log(lengthOfLastWord("Hello World"));
 
+// // 125. Valid Palindrome
+// const isPalindrome = function(s){
+//   const str = s.trim().toLowerCase().replace(/[^a-z0-9]/g, "");
+//   const reverseString = str.split("").reverse().join("");
+//   return str === reverseString ? true : false;
+// }
+// console.log(isPalindrome("A man, a plan, a canal: Panama"));
+
 // 125. Valid Palindrome
-const isPalindrome = function(s){
-  const str = s.trim().toLowerCase().replace(/[^a-z0-9]/g, "");
-  const reverseString = str.split("").reverse().join("");
-  return str === reverseString ? true : false;
-}
+const isPalindrome = function (s) {
+  const str = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  let i = 0;
+  let j = str.length - 1;
+
+  while (i < j) {
+    if (str.charAt(i) === str.charAt(j)) {
+      i++;
+      j--;
+    } else {
+      return false;
+    }
+  }
+
+  return true;
+};
 console.log(isPalindrome("A man, a plan, a canal: Panama"));
