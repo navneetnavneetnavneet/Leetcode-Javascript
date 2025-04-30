@@ -313,29 +313,37 @@
 // };
 // console.log(isAnagram("car", "arc"));
 
-// 242. Valid Anagram
-const isAnagram = function (s, t) {
-  const frequencyArray = new Array(123).fill(0);
+// // 242. Valid Anagram
+// const isAnagram = function (s, t) {
+//   const frequencyArray = new Array(123).fill(0);
 
-  if (s.length !== t.length) {
-    return false;
-  }
+//   if (s.length !== t.length) {
+//     return false;
+//   }
 
-  for (let i = 0; i < s.length; i++) {
-    const asciValue = s.charCodeAt(i);
-    frequencyArray[asciValue] = frequencyArray[asciValue] + 1;
-  }
+//   for (let i = 0; i < s.length; i++) {
+//     const asciValue = s.charCodeAt(i);
+//     frequencyArray[asciValue] = frequencyArray[asciValue] + 1;
+//   }
 
-  for (let i = 0; i < t.length; i++) {
-    const asciValue = t.charCodeAt(i);
-    frequencyArray[asciValue] = frequencyArray[asciValue] - 1;
-  }
+//   for (let i = 0; i < t.length; i++) {
+//     const asciValue = t.charCodeAt(i);
+//     frequencyArray[asciValue] = frequencyArray[asciValue] - 1;
+//   }
 
-  for (let i = 0; i < frequencyArray.length; i++) {
-    if (frequencyArray[i] !== 0) {
-      return false;
-    }
-  }
-  return true;
+//   for (let i = 0; i < frequencyArray.length; i++) {
+//     if (frequencyArray[i] !== 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(isAnagram("state", "taste"));
+
+// 258. Add Digit
+const addDigit = function (num) {
+  if (num === 0) return 0;
+  else if (num % 9 === 0) return 9;
+  else return num % 9;
 };
-console.log(isAnagram("state", "taste"));
+console.log(addDigit(38));
