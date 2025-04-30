@@ -305,10 +305,37 @@
 // };
 // console.log(isHappy(19));
 
+// // 242. Valid Anagram
+// const isAnagram = function (s, t) {
+//   return s.split("").sort().join("") === t.split("").sort().join("")
+//     ? true
+//     : false;
+// };
+// console.log(isAnagram("car", "arc"));
+
 // 242. Valid Anagram
 const isAnagram = function (s, t) {
-  return s.split("").sort().join("") === t.split("").sort().join("")
-    ? true
-    : false;
+  const frequencyArray = new Array(123).fill(0);
+
+  if (s.length !== t.length) {
+    return false;
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    const asciValue = s.charCodeAt(i);
+    frequencyArray[asciValue] = frequencyArray[asciValue] + 1;
+  }
+
+  for (let i = 0; i < t.length; i++) {
+    const asciValue = t.charCodeAt(i);
+    frequencyArray[asciValue] = frequencyArray[asciValue] - 1;
+  }
+
+  for (let i = 0; i < frequencyArray.length; i++) {
+    if (frequencyArray[i] !== 0) {
+      return false;
+    }
+  }
+  return true;
 };
-console.log(isAnagram("car", "arc"));
+console.log(isAnagram("state", "taste"));
