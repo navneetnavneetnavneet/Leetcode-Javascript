@@ -282,25 +282,33 @@
 // };
 // console.log(isHappy(19));
 
-// 202. Happy Number
-const isHappy = function (n) {
-  const set = new Set();
+// // 202. Happy Number
+// const isHappy = function (n) {
+//   const set = new Set();
 
-  while (n !== 1) {
-    let sum = 0;
-    while (n > 0) {
-      let rem = n % 10;
-      sum = sum + rem * rem;
-      n = Math.floor(n / 10);
-    }
+//   while (n !== 1) {
+//     let sum = 0;
+//     while (n > 0) {
+//       let rem = n % 10;
+//       sum = sum + rem * rem;
+//       n = Math.floor(n / 10);
+//     }
 
-    if (sum === 1) return true;
-    if (set.has(sum)) return false;
-    else set.add(sum);
+//     if (sum === 1) return true;
+//     if (set.has(sum)) return false;
+//     else set.add(sum);
 
-    n = sum;
-  }
+//     n = sum;
+//   }
 
-  return true;
+//   return true;
+// };
+// console.log(isHappy(19));
+
+// 242. Valid Anagram
+const isAnagram = function (s, t) {
+  return s.split("").sort().join("") === t.split("").sort().join("")
+    ? true
+    : false;
 };
-console.log(isHappy(19));
+console.log(isAnagram("car", "arc"));
