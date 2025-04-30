@@ -340,10 +340,28 @@
 // };
 // console.log(isAnagram("state", "taste"));
 
-// 258. Add Digit
-const addDigit = function (num) {
-  if (num === 0) return 0;
-  else if (num % 9 === 0) return 9;
-  else return num % 9;
+// // 258. Add Digit
+// const addDigit = function (num) {
+//   if (num === 0) return 0;
+//   else if (num % 9 === 0) return 9;
+//   else return num % 9;
+// };
+// console.log(addDigit(38));
+
+// 283. Move Zeroes
+const moveZeroes = function (nums) {
+  let nonZero = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      nums[nonZero] = nums[i];
+      nonZero++;
+    }
+  }
+
+  for (let i = nonZero; i < nums.length; i++) {
+    nums[i] = 0;
+  }
+  
+  return nums;
 };
-console.log(addDigit(38));
+console.log(moveZeroes([0, 1, 0, 3, 12]));
