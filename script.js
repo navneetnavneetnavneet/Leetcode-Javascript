@@ -348,20 +348,26 @@
 // };
 // console.log(addDigit(38));
 
-// 283. Move Zeroes
-const moveZeroes = function (nums) {
-  let nonZero = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== 0) {
-      nums[nonZero] = nums[i];
-      nonZero++;
-    }
-  }
+// // 283. Move Zeroes
+// const moveZeroes = function (nums) {
+//   let nonZero = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== 0) {
+//       nums[nonZero] = nums[i];
+//       nonZero++;
+//     }
+//   }
 
-  for (let i = nonZero; i < nums.length; i++) {
-    nums[i] = 0;
-  }
-  
-  return nums;
+//   for (let i = nonZero; i < nums.length; i++) {
+//     nums[i] = 0;
+//   }
+
+//   return nums;
+// };
+// console.log(moveZeroes([0, 1, 0, 3, 12]));
+
+// 28. Find the Index of the First Occurrence in a String
+const strStr = function (haystack, needle) {
+  return haystack.indexOf(needle);
 };
-console.log(moveZeroes([0, 1, 0, 3, 12]));
+console.log(strStr("leetcode", "leeto"));
