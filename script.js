@@ -366,8 +366,25 @@
 // };
 // console.log(moveZeroes([0, 1, 0, 3, 12]));
 
-// 28. Find the Index of the First Occurrence in a String
-const strStr = function (haystack, needle) {
-  return haystack.indexOf(needle);
+// // 28. Find the Index of the First Occurrence in a String
+// const strStr = function (haystack, needle) {
+//   return haystack.indexOf(needle);
+// };
+// console.log(strStr("leetcode", "leeto"));
+
+// 121. Best Time to Buy and Sell Stock
+const maxProfit = function (prices) {
+  let minPrice = Infinity;
+  let maxProfit = 0;
+
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] < minPrice) {
+      minPrice = prices[i];
+    } else if (prices[i] - minPrice > maxProfit) {
+      maxProfit = prices[i] - minPrice;
+    }
+  }
+
+  return maxProfit;
 };
-console.log(strStr("leetcode", "leeto"));
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
