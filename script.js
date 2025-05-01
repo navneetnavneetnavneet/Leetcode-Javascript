@@ -372,16 +372,33 @@
 // };
 // console.log(strStr("leetcode", "leeto"));
 
+// // 121. Best Time to Buy and Sell Stock
+// const maxProfit = function (prices) {
+//   let minPrice = Infinity;
+//   let maxProfit = 0;
+
+//   for (let i = 0; i < prices.length; i++) {
+//     if (prices[i] < minPrice) {
+//       minPrice = prices[i];
+//     } else if (prices[i] - minPrice > maxProfit) {
+//       maxProfit = prices[i] - minPrice;
+//     }
+//   }
+
+//   return maxProfit;
+// };
+// console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
 // 121. Best Time to Buy and Sell Stock
 const maxProfit = function (prices) {
   let minPrice = Infinity;
   let maxProfit = 0;
 
-  for (let i = 0; i < prices.length; i++) {
-    if (prices[i] < minPrice) {
-      minPrice = prices[i];
-    } else if (prices[i] - minPrice > maxProfit) {
-      maxProfit = prices[i] - minPrice;
+  for (let price of prices) {
+    if (price < minPrice) {
+      minPrice = price;
+    } else if (price - minPrice > maxProfit) {
+      maxProfit = price - minPrice;
     }
   }
 
