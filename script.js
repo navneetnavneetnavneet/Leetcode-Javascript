@@ -406,17 +406,44 @@
 // };
 // console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 
-// 344. Reverse String
-const reverseString = function (s) {
-  let i = 0;
-  let j = s.length - 1;
-  while (i < j) {
-    let temp = s[i];
-    s[i] = s[j];
-    s[j] = temp;
-    i++;
-    j--;
+// // 344. Reverse String
+// const reverseString = function (s) {
+//   let i = 0;
+//   let j = s.length - 1;
+//   while (i < j) {
+//     let temp = s[i];
+//     s[i] = s[j];
+//     s[j] = temp;
+//     i++;
+//     j--;
+//   }
+//   return s;
+// };
+// console.log(reverseString("hello"));
+
+// 345. Reverse Vowels of a String
+const reverseVowels = function (s) {
+  let vowels = "aeiouAEIOU";
+  let result = "";
+  const vowelsArray = [];
+
+  for (let i = 0; i < s.length; i++) {
+    let character = s.charAt(i);
+    if (vowels.includes(character)) {
+      vowelsArray.push(character);
+    }
   }
-  return s;
+
+  for (let i = 0; i < s.length; i++) {
+    let character = s.charAt(i);
+    if (vowels.includes(character)) {
+      result = result + vowelsArray.pop();
+    } else {
+      result = result + character;
+    }
+  }
+
+  return result;
 };
-console.log(reverseString("hello"));
+console.log(reverseVowels("IceCreAm"));
+// "AceCreIm"
