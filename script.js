@@ -389,19 +389,34 @@
 // };
 // console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 
-// 121. Best Time to Buy and Sell Stock
-const maxProfit = function (prices) {
-  let minPrice = Infinity;
-  let maxProfit = 0;
+// // 121. Best Time to Buy and Sell Stock
+// const maxProfit = function (prices) {
+//   let minPrice = Infinity;
+//   let maxProfit = 0;
 
-  for (let price of prices) {
-    if (price < minPrice) {
-      minPrice = price;
-    } else if (price - minPrice > maxProfit) {
-      maxProfit = price - minPrice;
-    }
+//   for (let price of prices) {
+//     if (price < minPrice) {
+//       minPrice = price;
+//     } else if (price - minPrice > maxProfit) {
+//       maxProfit = price - minPrice;
+//     }
+//   }
+
+//   return maxProfit;
+// };
+// console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
+// 344. Reverse String
+const reverseString = function (s) {
+  let i = 0;
+  let j = s.length - 1;
+  while (i < j) {
+    let temp = s[i];
+    s[i] = s[j];
+    s[j] = temp;
+    i++;
+    j--;
   }
-
-  return maxProfit;
+  return s;
 };
-console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+console.log(reverseString("hello"));
