@@ -447,24 +447,42 @@
 // };
 // console.log(reverseVowels("IceCreAm"));
 
+// // 389. Find the Difference
+// const findTheDifference = function (s, t) {
+//   const str = s.trim() + t.trim();
+//   const map = new Map();
+
+//   for (let i = 0; i < str.length; i++) {
+//     const character = str.charAt(i);
+//     if (map.has(character)) {
+//       map.set(character, map.get(character) + 1);
+//     } else {
+//       map.set(character, 1);
+//     }
+//   }
+
+//   for (let [key, value] of map.entries()) {
+//     if (value % 2 !== 0) {
+//       return key;
+//     }
+//   }
+// };
+// console.log(findTheDifference("abcd", "abcde"));
+
 // 389. Find the Difference
 const findTheDifference = function (s, t) {
   const str = s.trim() + t.trim();
-  const map = new Map();
 
-  for (let i = 0; i < str.length; i++) {
-    const character = str.charAt(i);
-    if (map.has(character)) {
-      map.set(character, map.get(character) + 1);
-    } else {
-      map.set(character, 1);
-    }
-  }
+  const frequencyObject = str.split("").reduce(function (acc, next) {
+    acc[next] = (acc[next] || 0) + 1;
+    return acc;
+  }, {});
 
-  for (let [key, value] of map.entries()) {
-    if (value % 2 !== 0) {
+  for (let key in frequencyObject) {
+    if (frequencyObject[key] % 2 !== 0) {
       return key;
     }
   }
 };
-console.log(findTheDifference("abcd", "abcde"));
+
+console.log(findTheDifference("", "y"));
