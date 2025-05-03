@@ -421,29 +421,50 @@
 // };
 // console.log(reverseString("hello"));
 
-// 345. Reverse Vowels of a String
-const reverseVowels = function (s) {
-  let vowels = "aeiouAEIOU";
-  let result = "";
-  const vowelsArray = [];
+// // 345. Reverse Vowels of a String
+// const reverseVowels = function (s) {
+//   let vowels = "aeiouAEIOU";
+//   let result = "";
+//   const vowelsArray = [];
 
-  for (let i = 0; i < s.length; i++) {
-    let character = s.charAt(i);
-    if (vowels.includes(character)) {
-      vowelsArray.push(character);
-    }
-  }
+//   for (let i = 0; i < s.length; i++) {
+//     let character = s.charAt(i);
+//     if (vowels.includes(character)) {
+//       vowelsArray.push(character);
+//     }
+//   }
 
-  for (let i = 0; i < s.length; i++) {
-    let character = s.charAt(i);
-    if (vowels.includes(character)) {
-      result = result + vowelsArray.pop();
+//   for (let i = 0; i < s.length; i++) {
+//     let character = s.charAt(i);
+//     if (vowels.includes(character)) {
+//       result = result + vowelsArray.pop();
+//     } else {
+//       result = result + character;
+//     }
+//   }
+
+//   return result;
+// };
+// console.log(reverseVowels("IceCreAm"));
+
+// 389. Find the Difference
+const findTheDifference = function (s, t) {
+  const str = s.trim() + t.trim();
+  const map = new Map();
+
+  for (let i = 0; i < str.length; i++) {
+    const character = str.charAt(i);
+    if (map.has(character)) {
+      map.set(character, map.get(character) + 1);
     } else {
-      result = result + character;
+      map.set(character, 1);
     }
   }
 
-  return result;
+  for (let [key, value] of map.entries()) {
+    if (value % 2 !== 0) {
+      return key;
+    }
+  }
 };
-console.log(reverseVowels("IceCreAm"));
-// "AceCreIm"
+console.log(findTheDifference("abcd", "abcde"));
