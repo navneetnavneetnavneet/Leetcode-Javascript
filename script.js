@@ -486,36 +486,66 @@
 // };
 // console.log(findTheDifference("", "y"));
 
+// // 205. Isomorphic Strings
+// const isIsomorphic = function (s, t) {
+//   if (s.length !== t.length) {
+//     return false;
+//   }
+
+//   const objS = {};
+//   const objT = {};
+
+//   for (let i = 0; i < s.length; i++) {
+//     let charS = s[i];
+//     let charT = t[i];
+
+//     if (objS[charS] !== undefined) {
+//       if (objS[charS] !== charT) {
+//         return false;
+//       }
+//     } else {
+//       objS[charS] = charT;
+//     }
+
+//     if(objT[charT] !== undefined){
+//       if(objT[charT] !== charS){
+//         return false;
+//       }
+//     }else{
+//       objT[charT] = charS;
+//     }
+//   }
+
+//   return true;
+// };
+// console.log(isIsomorphic("paper", "title"));
+
 // 205. Isomorphic Strings
 const isIsomorphic = function (s, t) {
   if (s.length !== t.length) {
     return false;
   }
 
-  const objS = {};
-  const objT = {};
+  const mapST = new Map();
+  const mapTS = new Map();
 
   for (let i = 0; i < s.length; i++) {
-    let charS = s[i];
-    let charT = t[i];
+    const charS = s.charAt(i);
+    const charT = t.charAt(i);
 
-    if (objS[charS] !== undefined) {
-      if (objS[charS] !== charT) {
-        return false;
-      }
-    } else {
-      objS[charS] = charT;
+    if (mapST.has(charS) && mapST.get(charS) !== charT) {
+      return false;
     }
 
-    if(objT[charT] !== undefined){
-      if(objT[charT] !== charS){
-        return false;
-      }
-    }else{
-      objT[charT] = charS;
+    if (mapTS.has(charT) && mapTS.get(charT) !== charS) {
+      return false;
     }
+
+    mapST.set(charS, charT);
+    mapTS.set(charT, charS);
   }
-  
+
   return true;
 };
-console.log(isIsomorphic("paper", "title"));
+
+console.log(isIsomorphic("title", "paper"));
