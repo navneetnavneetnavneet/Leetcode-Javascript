@@ -469,20 +469,53 @@
 // };
 // console.log(findTheDifference("abcd", "abcde"));
 
-// 389. Find the Difference
-const findTheDifference = function (s, t) {
-  const str = s.trim() + t.trim();
+// // 389. Find the Difference
+// const findTheDifference = function (s, t) {
+//   const str = s.trim() + t.trim();
 
-  const frequencyObject = str.split("").reduce(function (acc, next) {
-    acc[next] = (acc[next] || 0) + 1;
-    return acc;
-  }, {});
+//   const frequencyObject = str.split("").reduce(function (acc, next) {
+//     acc[next] = (acc[next] || 0) + 1;
+//     return acc;
+//   }, {});
 
-  for (let key in frequencyObject) {
-    if (frequencyObject[key] % 2 !== 0) {
-      return key;
+//   for (let key in frequencyObject) {
+//     if (frequencyObject[key] % 2 !== 0) {
+//       return key;
+//     }
+//   }
+// };
+// console.log(findTheDifference("", "y"));
+
+// 205. Isomorphic Strings
+const isIsomorphic = function (s, t) {
+  if (s.length !== t.length) {
+    return false;
+  }
+
+  const objS = {};
+  const objT = {};
+
+  for (let i = 0; i < s.length; i++) {
+    let charS = s[i];
+    let charT = t[i];
+
+    if (objS[charS] !== undefined) {
+      if (objS[charS] !== charT) {
+        return false;
+      }
+    } else {
+      objS[charS] = charT;
+    }
+
+    if(objT[charT] !== undefined){
+      if(objT[charT] !== charS){
+        return false;
+      }
+    }else{
+      objT[charT] = charS;
     }
   }
+  
+  return true;
 };
-
-console.log(findTheDifference("", "y"));
+console.log(isIsomorphic("paper", "title"));
