@@ -520,32 +520,48 @@
 // };
 // console.log(isIsomorphic("paper", "title"));
 
-// 205. Isomorphic Strings
-const isIsomorphic = function (s, t) {
-  if (s.length !== t.length) {
-    return false;
-  }
+// // 205. Isomorphic Strings
+// const isIsomorphic = function (s, t) {
+//   if (s.length !== t.length) {
+//     return false;
+//   }
 
-  const mapST = new Map();
-  const mapTS = new Map();
+//   const mapST = new Map();
+//   const mapTS = new Map();
 
-  for (let i = 0; i < s.length; i++) {
-    const charS = s.charAt(i);
-    const charT = t.charAt(i);
+//   for (let i = 0; i < s.length; i++) {
+//     const charS = s.charAt(i);
+//     const charT = t.charAt(i);
 
-    if (mapST.has(charS) && mapST.get(charS) !== charT) {
+//     if (mapST.has(charS) && mapST.get(charS) !== charT) {
+//       return false;
+//     }
+
+//     if (mapTS.has(charT) && mapTS.get(charT) !== charS) {
+//       return false;
+//     }
+
+//     mapST.set(charS, charT);
+//     mapTS.set(charT, charS);
+//   }
+
+//   return true;
+// };
+// console.log(isIsomorphic("title", "paper"));
+
+// 217. Contains Duplicate
+const containsDuplicate = function (nums) {
+  const set = new Set();
+  
+  for (let i = 0; i < nums.length; i++) {
+    const num = nums[i];
+    if (set.has(num)) {
       return false;
+    } else {
+      set.add(num);
     }
-
-    if (mapTS.has(charT) && mapTS.get(charT) !== charS) {
-      return false;
-    }
-
-    mapST.set(charS, charT);
-    mapTS.set(charT, charS);
   }
 
   return true;
 };
-
-console.log(isIsomorphic("title", "paper"));
+console.log(containsDuplicate([1, 2, 3, 4]));
