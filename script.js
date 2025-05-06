@@ -566,19 +566,33 @@
 // };
 // console.log(containsDuplicate([1, 2, 3, 4]));
 
-// 217. Contains Duplicate
-const containsDuplicate = function (nums) {
-  const map = new Map();
+// // 217. Contains Duplicate
+// const containsDuplicate = function (nums) {
+//   const map = new Map();
 
-  for (let i = 0; i < nums.length; i++) {
-    const num = nums[i];
-    if (map.has(num)) {
-      return true;
-    } else {
-      map.set(num, 1);
-    }
-  }
+//   for (let i = 0; i < nums.length; i++) {
+//     const num = nums[i];
+//     if (map.has(num)) {
+//       return true;
+//     } else {
+//       map.set(num, 1);
+//     }
+//   }
 
-  return false;
-};
-console.log(containsDuplicate([1, 2, 3, 1]));
+//   return false;
+// };
+// console.log(containsDuplicate([1, 2, 3, 1]));
+
+// // 219. Contains Duplicate II (Time Limit Exceed)
+// const containsNearbyDuplicate = function (nums, k) {
+//   for (let i = 0; i < nums.length - 1; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] === nums[j] && Math.abs(i - j) <= k) {
+//         return true;
+//       }
+//     }
+//   }
+
+//   return false;
+// };
+// console.log(containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2));
