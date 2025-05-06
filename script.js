@@ -549,19 +549,36 @@
 // };
 // console.log(isIsomorphic("title", "paper"));
 
+// // 217. Contains Duplicate
+// const containsDuplicate = function (nums) {
+//   const set = new Set();
+
+//   for (let i = 0; i < nums.length; i++) {
+//     const num = nums[i];
+//     if (set.has(num)) {
+//       return false;
+//     } else {
+//       set.add(num);
+//     }
+//   }
+
+//   return true;
+// };
+// console.log(containsDuplicate([1, 2, 3, 4]));
+
 // 217. Contains Duplicate
 const containsDuplicate = function (nums) {
-  const set = new Set();
-  
+  const map = new Map();
+
   for (let i = 0; i < nums.length; i++) {
     const num = nums[i];
-    if (set.has(num)) {
-      return false;
+    if (map.has(num)) {
+      return true;
     } else {
-      set.add(num);
+      map.set(num, 1);
     }
   }
 
-  return true;
+  return false;
 };
-console.log(containsDuplicate([1, 2, 3, 4]));
+console.log(containsDuplicate([1, 2, 3, 1]));
