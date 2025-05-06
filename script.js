@@ -597,18 +597,24 @@
 // };
 // console.log(containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2));
 
-// 219. Contains Duplicate II
-const containsNearbyDuplicate = function (nums, k) {
-  const lastIndex = {};
+// // 219. Contains Duplicate II
+// const containsNearbyDuplicate = function (nums, k) {
+//   const lastIndex = {};
 
-  for (let i = 0; i < nums.length; i++) {
-    const num = nums[i];
-    if (lastIndex.hasOwnProperty(num) && Math.abs(i - lastIndex[num]) <= k) {
-      return true;
-    }
-    lastIndex[num] = i;
-  }
+//   for (let i = 0; i < nums.length; i++) {
+//     const num = nums[i];
+//     if (lastIndex.hasOwnProperty(num) && Math.abs(i - lastIndex[num]) <= k) {
+//       return true;
+//     }
+//     lastIndex[num] = i;
+//   }
 
-  return false;
+//   return false;
+// };
+// console.log(containsNearbyDuplicate([1, 2, 3, 1], 3));
+
+// 231. Power of Two
+var isPowerOfTwo = function(n) {
+    return n > 0 && (n & (n-1)) === 0;
 };
-console.log(containsNearbyDuplicate([1, 2, 3, 1], 3));
+console.log(isPowerOfTwo(3))
