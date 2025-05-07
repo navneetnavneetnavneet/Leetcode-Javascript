@@ -613,8 +613,26 @@
 // };
 // console.log(containsNearbyDuplicate([1, 2, 3, 1], 3));
 
-// 231. Power of Two
-var isPowerOfTwo = function(n) {
-    return n > 0 && (n & (n-1)) === 0;
+// // 231. Power of Two
+// var isPowerOfTwo = function (n) {
+//   return n > 0 && (n & (n - 1)) === 0;
+// };
+// console.log(isPowerOfTwo(3));
+
+// 121. Best Time to Buy and Sell Stock
+const maxProfit = function (prices) {
+  let minPrice = Infinity;
+  let maxProfit = 0;
+
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] < minPrice) {
+      minPrice = prices[i];
+    }
+    if (prices[i] - minPrice > maxProfit) {
+      maxProfit = prices[i] - minPrice;
+    }
+  }
+
+  return maxProfit;
 };
-console.log(isPowerOfTwo(3))
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
