@@ -619,20 +619,40 @@
 // };
 // console.log(isPowerOfTwo(3));
 
-// 121. Best Time to Buy and Sell Stock
-const maxProfit = function (prices) {
-  let minPrice = Infinity;
-  let maxProfit = 0;
+// // 121. Best Time to Buy and Sell Stock
+// const maxProfit = function (prices) {
+//   let minPrice = Infinity;
+//   let maxProfit = 0;
 
-  for (let i = 0; i < prices.length; i++) {
-    if (prices[i] < minPrice) {
-      minPrice = prices[i];
+//   for (let i = 0; i < prices.length; i++) {
+//     if (prices[i] < minPrice) {
+//       minPrice = prices[i];
+//     }
+//     if (prices[i] - minPrice > maxProfit) {
+//       maxProfit = prices[i] - minPrice;
+//     }
+//   }
+
+//   return maxProfit;
+// };
+// console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
+// 118. Pascal's Triangle
+const generate = function (numRows) {
+  const traingle = [];
+  for (let i = 0; i < numRows; i++) {
+    const row = [];
+    for (let j = 0; j <= i; j++) {
+      if (j === 0 || j === i) {
+        row.push(1);
+      } else {
+        let preValue = traingle[i - 1];
+        let sum = preValue[j - 1] + preValue[j];
+        row.push(sum);
+      }
     }
-    if (prices[i] - minPrice > maxProfit) {
-      maxProfit = prices[i] - minPrice;
-    }
+    traingle.push(row);
   }
-
-  return maxProfit;
+  return traingle;
 };
-console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+console.log(generate(5));
