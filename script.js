@@ -701,3 +701,17 @@
 //   return num === Number(num.toString().split("").reverse().join("")) ? true : false;
 // }
 // console.log(isPalindrome(-121));
+
+// // 26. Remove Duplicates from Sorted Array
+// function removeDuplicates(nums){
+//   if(nums.length === 0) return 0;
+//   let unique = 0;
+//   for(let i=1; i<nums.length; i++){
+//     if(nums[unique] !== nums[i]){
+//       unique++;
+//       nums[unique] = nums[i];
+//     }
+//   }
+//   return unique + 1;
+// }
+// console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]));
