@@ -682,3 +682,22 @@
 //   }
 // }
 // console.log(twoSum([2,7,11,15], 9));
+
+// // 9. Palindrome Number
+// function isPalindrome(num){
+//   const copyNumber = num;
+//   let sum = 0;
+//   while(num > 0){
+//     let rem = num % 10;
+//     sum = sum * 10 + rem;
+//     num = Math.floor(num / 10);
+//   }
+//   return copyNumber === sum ? true : false;
+// }
+// console.log(isPalindrome(-121));
+
+// // 9. Palindrome Number
+// function isPalindrome(num){
+//   return num === Number(num.toString().split("").reverse().join("")) ? true : false;
+// }
+// console.log(isPalindrome(-121));
