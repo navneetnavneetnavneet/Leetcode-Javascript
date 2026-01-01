@@ -740,3 +740,14 @@
 //   return k;
 // }
 // console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
+
+// // 492. Construct the Rectangle
+// function constructRectangle(area) {
+//   let width = Math.floor(Math.sqrt(area));
+//   while (area % width !== 0) {
+//     width--;
+//   }
+//   let length = area / width;
+//   return [length, width];
+// }
+// console.log(constructRectangle(4));
