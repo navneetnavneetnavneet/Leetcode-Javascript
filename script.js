@@ -657,7 +657,6 @@
 // };
 // console.log(generate(5));
 
-
 // // 1. Two Sum
 // function twoSum(nums, target){
 //   for(let i=0; i<nums.length-1; i++){
@@ -715,3 +714,29 @@
 //   return unique + 1;
 // }
 // console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]));
+
+// // 27. Remove Element
+// function removeElement(nums, val){
+//  let k = 0;
+//     for(let i=0; i<nums.length; i++){
+//         if(nums[i] !== val){
+//             nums[k] = nums[i];
+//             k++;
+//         }
+//     }
+//     return k;
+// }
+// console.log(removeElement([0,1,2,2,3,0,4,2], 2));
+
+// // 27. Remove Element
+// function removeElement(nums, val) {
+//   let k = 0;
+//   nums.forEach(function (num, i, nums) {
+//     if (num !== val) {
+//       nums[k] = nums[i];
+//       k++;
+//     }
+//   });
+//   return k;
+// }
+// console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
