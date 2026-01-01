@@ -637,22 +637,24 @@
 // };
 // console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 
-// 118. Pascal's Triangle
-const generate = function (numRows) {
-  const traingle = [];
-  for (let i = 0; i < numRows; i++) {
-    const row = [];
-    for (let j = 0; j <= i; j++) {
-      if (j === 0 || j === i) {
-        row.push(1);
-      } else {
-        let preValue = traingle[i - 1];
-        let sum = preValue[j - 1] + preValue[j];
-        row.push(sum);
-      }
-    }
-    traingle.push(row);
-  }
-  return traingle;
-};
-console.log(generate(5));
+// // 118. Pascal's Triangle
+// const generate = function (numRows) {
+//   const traingle = [];
+//   for (let i = 0; i < numRows; i++) {
+//     const row = [];
+//     for (let j = 0; j <= i; j++) {
+//       if (j === 0 || j === i) {
+//         row.push(1);
+//       } else {
+//         let preValue = traingle[i - 1];
+//         let sum = preValue[j - 1] + preValue[j];
+//         row.push(sum);
+//       }
+//     }
+//     traingle.push(row);
+//   }
+//   return traingle;
+// };
+// console.log(generate(5));
+
+
