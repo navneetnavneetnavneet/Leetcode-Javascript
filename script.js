@@ -751,3 +751,15 @@
 //   return [length, width];
 // }
 // console.log(constructRectangle(4));
+
+// // 268. Missing Number
+// function missingNumber(nums) {
+//   let n = nums.length;
+//   let totalSum = (n * (n + 1)) / 2;
+//   let arrSum = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     arrSum = arrSum + nums[i];
+//   }
+//   return totalSum - arrSum;
+// }
+// console.log(missingNumber([9,6,4,2,3,5,7,0,1]));
