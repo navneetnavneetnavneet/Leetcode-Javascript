@@ -838,3 +838,15 @@
 //     return Math.floor(Math.sqrt(x));
 // }
 // console.log(mySqrt(4));
+
+// // Array Left Rotation by 1 Step
+// function leftRotaion(arr) {
+//   let temp = arr[0];
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     arr[i] = arr[i + 1];
+//   }
+//   arr[arr.length - 1] = temp;
+
+//   return arr;
+// }
+// console.log(leftRotaion([1, 2, 3, 4, 5]));
