@@ -763,3 +763,16 @@
 //   return totalSum - arrSum;
 // }
 // console.log(missingNumber([9,6,4,2,3,5,7,0,1]));
+
+// // 268. Missing Number
+// function missingNumber(nums) {
+//   let ans = 0;
+//   for (let i = 1; i <= nums.length; i++) {
+//     ans = ans ^ i;
+//   }
+//   for (let i = 0; i < nums.length; i++) {
+//     ans = ans ^ nums[i];
+//   }
+//   return ans;
+// }
+// console.log(missingNumber([9,6,4,2,3,5,7,0,1]));
