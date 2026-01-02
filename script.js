@@ -813,3 +813,9 @@
 //   return nums;
 // }
 // console.log(moveZeroes([0,1,0,3,12]));
+
+// // 231. Power of Two
+function isPowerOfTwo(n) {
+  return n > 0 && (n & (n - 1)) === 0 ? true : false;
+}
+console.log(isPowerOfTwo(8));
