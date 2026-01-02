@@ -832,3 +832,9 @@
 //   return true;
 // }
 // console.log(isPowerOfThree(27));
+
+// // 69. Sqrt(x)
+// function mySqrt(x){
+//     return Math.floor(Math.sqrt(x));
+// }
+// console.log(mySqrt(4));
