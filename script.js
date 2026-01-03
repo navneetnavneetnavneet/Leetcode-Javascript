@@ -923,3 +923,36 @@
 //   return nums;
 // }
 // console.log(rightRotaionByKStep([1, 2, 3, 4, 5], 3));
+
+// // Linear Search Algorithm
+// function linearSearch(arr, target) {
+//   let index = -1;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === target) {
+//       index = i;
+//       break;
+//     }
+//   }
+//   return index;
+// }
+// console.log(linearSearch([10, 40, 56, 68, 78, 86], 8));
+
+// // Binar Search Algorithm (Efficient Approach)
+// function binarySearch(arr, target) {
+//   let start = 0;
+//   let end = arr.length - 1;
+//   let index = -1;
+//   while (start <= end) {
+//     let mid = Math.floor(start + (end - start) / 2);
+//     if (arr[mid] === target) {
+//       index = mid;
+//       return index;
+//     } else if (arr[mid] > target) {
+//       end = mid - 1;
+//     } else if (arr[mid] < target) {
+//       start = mid + 1;
+//     }
+//   }
+//   return index;
+// }
+// console.log(binarySearch([2, 14, 25, 36, 49, 54, 66, 78, 99], 99));
