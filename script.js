@@ -982,3 +982,17 @@
 //   return max_so_far;
 // }
 // console.log(maxSubArray([5,4,-1,7,8]));
+
+// // 169. Majority Element
+// function majorityElement(nums) {
+//   let count = 1;
+//   let majority_element = nums[0];
+//   for (let i = 1; i < nums.length; i++) {
+//     if (count === 0) {
+//       majority_element = nums[i];
+//     }
+//     majority_element === nums[i] ? count++ : count--;
+//   }
+//   return majority_element;
+// }
+// console.log(majorityElement([2, 2, 1, 1, 1, 2, 2]));
