@@ -956,3 +956,29 @@
 //   return index;
 // }
 // console.log(binarySearch([2, 14, 25, 36, 49, 54, 66, 78, 99], 99));
+
+// // 53. Maximum Subarray (Time Limit Exceeded)
+// function maxSubArray(nums) {
+//   let maxSum = nums[0];
+//   for (let i = 0; i < nums.length; i++) {
+//     let currentSum = 0;
+//     for (let j = i; j < nums.length; j++) {
+//       currentSum = currentSum + nums[j];
+//       maxSum = Math.max(maxSum, currentSum);
+//     }
+//   }
+//   return maxSum;
+// }
+// console.log(maxSubArray([-1]));
+
+// // 53. Maximum Subarray (Kadane's Algorithm)
+// function maxSubArray(nums) {
+//   let currentSum = nums[0];
+//   let max_so_far = nums[0];
+//   for (let i = 1; i < nums.length; i++) {
+//     currentSum = Math.max(nums[i], currentSum + nums[i]);
+//     max_so_far = Math.max(max_so_far, currentSum);
+//   }
+//   return max_so_far;
+// }
+// console.log(maxSubArray([5,4,-1,7,8]));
