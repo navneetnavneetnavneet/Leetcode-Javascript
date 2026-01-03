@@ -860,3 +860,47 @@
 //   return arr;
 // }
 // console.log(rightRotaion([1, 2, 3, 4, 5]));
+
+// // Array Left Rotation by k Step
+// function leftRotaionByKStep(arr, k) {
+//   k = k % arr.length;
+//   for (let i = 1; i <= k; i++) {
+//     let temp = arr[0];
+//     for (let i = 0; i < arr.length - 1; i++) {
+//       arr[i] = arr[i + 1];
+//     }
+//     arr[arr.length - 1] = temp;
+//   }
+//   return arr;
+// }
+// console.log(leftRotaionByKStep([1, 2, 3, 4, 5], 7));
+
+// // Array Left Rotation by k Step
+// function leftRotaionByKStep(arr, k) {
+//   k = k % arr.length;
+//   let temp = new Array(arr.length);
+//   for (let i = 0; i < arr.length; i++) {
+//     temp[i] = arr[(i + k) % arr.length];
+//   }
+//   return temp;
+// }
+// console.log(leftRotaionByKStep([1, 2, 3, 4, 5], 3));
+
+// // Array Left Rotation by k Step (Efficient Approach)
+// function reverseArray(arr, i, j) {
+//   while (i < j) {
+//     let temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+//     i++;
+//     j--;
+//   }
+// }
+// function leftRotaionByKStep(nums, k) {
+//   k = k % nums.length;
+//   reverseArray(nums, 0, k - 1);
+//   reverseArray(nums, k, nums.length - 1);
+//   reverseArray(nums, 0, nums.length - 1);
+//   return nums;
+// }
+// console.log(leftRotaionByKStep([1, 2, 3, 4, 5], 3));
