@@ -996,3 +996,15 @@
 //   return majority_element;
 // }
 // console.log(majorityElement([2, 2, 1, 1, 1, 2, 2]));
+
+// // 122. Best Time to Buy and Sell Stock II
+// function maxProfit(prices) {
+//   let maxProfit = 0;
+//   for (let i = 1; i < prices.length; i++) {
+//     if (prices[i] - prices[i - 1] > 0) {
+//       maxProfit = maxProfit + (prices[i] - prices[i - 1]);
+//     }
+//   }
+//   return maxProfit;
+// }
+// console.log(maxProfit([7, 6, 4, 3, 1]));
