@@ -904,3 +904,22 @@
 //   return nums;
 // }
 // console.log(leftRotaionByKStep([1, 2, 3, 4, 5], 3));
+
+// // Array Right Rotation by k Step (Efficient Approach)
+// function reverseArray(arr, i, j) {
+//   while (i < j) {
+//     let temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+//     i++;
+//     j--;
+//   }
+// }
+// function rightRotaionByKStep(nums, k) {
+//   k = k % nums.length;
+//   reverseArray(nums, 0, nums.length - 1);
+//   reverseArray(nums, 0, k - 1);
+//   reverseArray(nums, k, nums.length - 1);
+//   return nums;
+// }
+// console.log(rightRotaionByKStep([1, 2, 3, 4, 5], 3));
