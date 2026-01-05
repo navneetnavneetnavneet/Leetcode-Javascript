@@ -1136,3 +1136,33 @@
 //     [4, 5, 6],
 //   ])
 // );
+
+// // 48. Rotate Image (Transpose Matrix + Reverse Matrix)
+// function rotateImage(matrix) {
+//   for (let i = 0; i < matrix.length; i++) {
+//     for (let j = i; j < matrix[i].length; j++) {
+//       let temp = matrix[i][j];
+//       matrix[i][j] = matrix[j][i];
+//       matrix[j][i] = temp;
+//     }
+//   }
+//   for (let i = 0; i < matrix.length; i++) {
+//     let j = 0;
+//     let k = matrix[i].length - 1;
+//     while (j < k) {
+//       let temp = matrix[i][j];
+//       matrix[i][j] = matrix[i][k];
+//       matrix[i][k] = temp;
+//       j++;
+//       k--;
+//     }
+//   }
+//   return matrix;
+// }
+// console.log(
+//   rotateImage([
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9],
+//   ])
+// );
