@@ -1072,3 +1072,27 @@
 //   return start
 // }
 // console.log(search([1, 3, 5, 6], 5));
+
+// // 2-D array digonal sum
+// function digonalSum(arr) {
+//   let leftSum = 0;
+//   let rightSum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr[i].length; j++) {
+//       if (i === j) {
+//         leftSum = leftSum + arr[i][j];
+//       }
+//       if (i + j === arr.length - 1) {
+//         rightSum = rightSum + arr[i][j];
+//       }
+//     }
+//   }
+//   return { leftSum, rightSum };
+// }
+// console.log(
+//   digonalSum([
+//     [1, 2, 8],
+//     [11, 12, 13],
+//     [18, 19, 20],
+//   ])
+// );
