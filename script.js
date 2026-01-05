@@ -1209,3 +1209,46 @@
 //     [7, 8, 9],
 //   ])
 // );
+
+// // 59. Spiral Matrix II
+// function generateSpiralMatrix(n) {
+//   let result = new Array(n);
+
+//   for (let i = 0; i < result.length; i++) {
+//     result[i] = new Array(n);
+//   }
+
+//   let num = 1;
+//   let top = 0;
+//   let left = 0;
+//   let right = n - 1;
+//   let bottom = n - 1;
+
+//   while (top <= bottom && left <= right) {
+//     for (let i = top; i <= right; i++) {
+//       result[top][i] = num++;
+//     }
+//     top++;
+
+//     for (let i = top; i <= bottom; i++) {
+//       result[i][right] = num++;
+//     }
+//     right--;
+
+//     if (top <= bottom) {
+//       for (let i = right; i >= left; i--) {
+//         result[bottom][i] = num++;
+//       }
+//       bottom--;
+//     }
+
+//     if (left <= right) {
+//       for (let i = bottom; i >= top; i--) {
+//         result[i][left] = num++;
+//       }
+//     }
+//   }
+
+//   return result;
+// }
+// console.log(generateSpiralMatrix(3));
