@@ -1116,3 +1116,23 @@
 //     [7, 8, 9],
 //   ])
 // );
+
+// // 867. Transpose Matrix
+// function transpose(matrix) {
+//   const ans = new Array(matrix[0].length);
+//   for (let i = 0; i < ans.length; i++) {
+//     ans[i] = new Array(matrix.length);
+//   }
+//   for (let i = 0; i < ans.length; i++) {
+//     for (let j = 0; j < ans[i].length; j++) {
+//       ans[i][j] = matrix[j][i];
+//     }
+//   }
+//   return ans;
+// }
+// console.log(
+//   transpose([
+//     [1, 2, 3],
+//     [4, 5, 6],
+//   ])
+// );
