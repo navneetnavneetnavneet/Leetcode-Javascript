@@ -1258,3 +1258,11 @@
 //   return haystack.indexOf(needle);
 // }
 // console.log(strStr("sadbutsad", "sad"));
+
+// // 58. Length of Last Word
+// function lengthOfLastWord(s) {
+//   let strArray = s.trim().split(" ");
+//   let lastIndex = strArray[strArray.length - 1];
+//   return lastIndex.length;
+// }
+// console.log(lengthOfLastWord("Hello World"));
