@@ -1266,3 +1266,14 @@
 //   return lastIndex.length;
 // }
 // console.log(lengthOfLastWord("Hello World"));
+
+// // 151. Reverse Words in a String
+// function reverseWords(s) {
+//   return s
+//     .trim()
+//     .split(" ")
+//     .filter((word) => word !== "")
+//     .reverse()
+//     .join(" ");
+// }
+// console.log(reverseWords("the sky is blue"));
