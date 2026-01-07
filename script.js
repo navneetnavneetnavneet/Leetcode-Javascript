@@ -974,6 +974,25 @@
 // }
 // console.log(bubbleSort([5, 3, 1, 9, 7]));
 
+// // Selection Sort
+// function selectionSort(arr) {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     let small = i;
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[small] > arr[j]) {
+//         small = j;
+//       }
+//     }
+//     if (small !== i) {
+//       let temp = arr[i];
+//       arr[i] = arr[small];
+//       arr[small] = temp;
+//     }
+//   }
+//   return arr;
+// }
+// console.log(selectionSort([5, 3, 1, 7, 9]));
+
 // // 53. Maximum Subarray (Time Limit Exceeded)
 // function maxSubArray(nums) {
 //   let maxSum = nums[0];
