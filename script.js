@@ -957,6 +957,23 @@
 // }
 // console.log(binarySearch([2, 14, 25, 36, 49, 54, 66, 78, 99], 99));
 
+// Sorting Algorithm
+// // Bubble Sort Algorithm
+// function bubbleSort(arr) {
+//   let n = arr.length;
+//   for (let i = 0; i < n - 1; i++) {
+//     for (let j = 0; j < n - 1 - i; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         let temp = arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = temp;
+//       }
+//     }
+//   }
+//   return arr;
+// }
+// console.log(bubbleSort([5, 3, 1, 9, 7]));
+
 // // 53. Maximum Subarray (Time Limit Exceeded)
 // function maxSubArray(nums) {
 //   let maxSum = nums[0];
