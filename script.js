@@ -1328,3 +1328,17 @@
 //     .join(" ");
 // }
 // console.log(reverseWords("the sky is blue"));
+
+// // Check  if a  number is prime or not
+// function isPrime(num) {
+//   if (num <= 1) {
+//     return false;
+//   }
+//   for (let i = 2; i <= Math.floor(num / 2); i++) {
+//     if (num % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(isPrime(13));
